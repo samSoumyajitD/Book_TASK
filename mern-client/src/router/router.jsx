@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         element: <Singlebook />,
         loader: async ({ params }) => {
           try {
-            const response = await fetch(`https://book-task-back.onrender.com/${params.id}`);
+            const response = await fetch(`https://book-task-back.onrender.com/book/${params.id}`);
             if (!response.ok) {
               throw new Error('Failed to fetch book data');
             }
