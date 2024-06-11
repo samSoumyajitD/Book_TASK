@@ -47,7 +47,7 @@ const Edit = () => {
       bookPdfUrl: form.bookPdfUrl.value
     };
 
-    fetch(`https://book-api-zeta.vercel.app/book/${id}`, {
+    fetch(`https://book-task-back.onrender.com/book/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -65,7 +65,7 @@ const Edit = () => {
  const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch("https://book-api-zeta.vercel.app/all-books")
+    fetch("https://book-task-back.onrender.com/all-books")
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

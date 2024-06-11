@@ -7,7 +7,7 @@ const BestBook = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://book-api-zeta.vercel.app/all-books')
+    fetch('https://book-task-back.onrender.com/all-books')
       .then((res) => res.json())
       .then((data) => {
         setBooks(data.slice(0,6));

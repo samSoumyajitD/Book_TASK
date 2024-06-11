@@ -2,8 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from '../App';
 import Home from '../home/Home';
 import Shop from '../shop/Shop';
-import About from '../components/About';
-import Blog from '../components/Blog';
+
 import Singlebook from '../components/Singlebook';
 import DashboardLayout from '../dashboard/DashboardLayout';
 
@@ -29,20 +28,14 @@ const router = createBrowserRouter([
         path: 'shop',
         element: <Shop />,
       },
-      {
-        path: 'about',
-        element: <About />,
-      },
-      {
-        path: 'blog',
-        element: <Blog />,
-      },
+      
+      
       {
         path: 'book/:id',
         element: <Singlebook />,
         loader: async ({ params }) => {
           try {
-            const response = await fetch(`https://book-api-zeta.vercel.app/book/${params.id}`);
+            const response = await fetch(`https://book-task-back.onrender.com/${params.id}`);
             if (!response.ok) {
               throw new Error('Failed to fetch book data');
             }
@@ -69,7 +62,7 @@ const router = createBrowserRouter([
       },{
         path: 'edit/:id',
         element: <Edit />,
-        loader:({params}) => fetch(`https://book-api-zeta.vercel.app/book/${params.id}`)
+        loader:({params}) => fetch(`https://book-task-back.onrender.com/book/${params.id}`)
       }
     ],
   },{

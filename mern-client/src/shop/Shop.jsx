@@ -3,7 +3,7 @@ import { Card } from "flowbite-react";
 const Shop = () => {
     const [books,setBooks] = useState([]);
     useEffect( () => {
-        fetch("https://book-api-zeta.vercel.app/all-books").then(res => res.json()).then( data => setBooks(data));
+        fetch("https://book-task-back.onrender.com/all-books").then(res => res.json()).then( data => setBooks(data));
     })
   return (
     <div className='mt-28 px-4 lg:px24'>
