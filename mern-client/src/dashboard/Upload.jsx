@@ -46,7 +46,7 @@ const Upload = () => {
       bookTitle, authorName, imageURL, category, bookDescription, bookPdfUrl
     };
 
-    fetch("http://localhost:5000/upload-book", {
+    fetch("https://book-api-zeta.vercel.app/upload-book", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

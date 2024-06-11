@@ -6,14 +6,14 @@ const Manage = () => {
   const [allBooks, setAllBooks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-books")
+    fetch("https://book-api-zeta.vercel.app/all-books")
       .then(res => res.json())
       .then(data => setAllBooks(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/book/${id}`, {
+    fetch(`https://book-api-zeta.vercel.app/book/${id}`, {
       method: "DELETE",
     })
     .then(res => res.json())

@@ -7,7 +7,7 @@ const BestBook = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/all-books')
+    fetch('https://book-api-zeta.vercel.app/all-books')
       .then((res) => res.json())
       .then((data) => {
         setBooks(data.slice(4,18));
